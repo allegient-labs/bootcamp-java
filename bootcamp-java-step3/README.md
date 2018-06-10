@@ -29,14 +29,15 @@ This section is about Redis on Cloud Foundry. Changes:
 
 The push will fail. After the push:
 
-cf bind-service dmi-loan-calculator redis
-cf restage dmi-loan-calculator
+- cf bind-service dmi-loan-calculator redis
+- cf restage dmi-loan-calculator
 
 Can also add the following to the manifest:
 
+```yaml
   services:
   - redis
-
+```
 
 
 Sample URLs:
