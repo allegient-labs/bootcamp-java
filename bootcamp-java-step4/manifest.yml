@@ -1,0 +1,7 @@
+applications:
+- name: dmi-loan-calculator
+  memory: 640M
+  path: target/bootcamp-java-step4-1.0.0.jar
+  random-route: true
+  services:
+  - redis
