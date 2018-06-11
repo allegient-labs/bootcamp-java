@@ -1,4 +1,4 @@
-package com.dmi.loancalculator.http;
+package com.dmi.loancalculator.domain;
 
 import java.math.BigDecimal;
 
@@ -10,6 +10,7 @@ public class CalculatedPayment {
     private int years;
     private BigDecimal payment;
     private long hitCount;
+    private String instance;
     
     private CalculatedPayment(Builder builder) {
         this.amount = builder.amount;
@@ -17,6 +18,7 @@ public class CalculatedPayment {
         this.years = builder.years;
         this.payment = builder.payment;
         this.hitCount = builder.hitCount;
+        this.instance = System.getenv("CF_INSTANCE_INDEX");
     }
 
     public BigDecimal getPayment() {
@@ -37,6 +39,10 @@ public class CalculatedPayment {
     
     public long getHitCount() {
         return hitCount;
+    }
+    
+    public String getInstance() {
+        return instance;
     }
     
     @JsonIgnoreType

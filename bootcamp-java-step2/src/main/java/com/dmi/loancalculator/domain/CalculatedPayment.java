@@ -1,4 +1,4 @@
-package com.dmi.loancalculator.http;
+package com.dmi.loancalculator.domain;
 
 import java.math.BigDecimal;
 

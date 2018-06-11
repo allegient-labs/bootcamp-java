@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dmi.loancalculator.domain.CalculatedPayment;
 import com.dmi.loancalculator.service.HitCountService;
 import com.dmi.loancalculator.service.PaymentCalculator;
 
@@ -25,7 +25,7 @@ public class PaymentController {
     
     @ApiOperation("Calculate a loan payment")
     @CrossOrigin(origins="*")
-    @RequestMapping(value="/payment", method = RequestMethod.GET)
+    @GetMapping("/payment")
     public CalculatedPayment calculatePayment(@RequestParam("amount") double amount,
             @RequestParam("rate") double rate,
             @RequestParam("years") int years) {
