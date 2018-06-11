@@ -39,6 +39,9 @@
 5. Overview of Swagger
 6. Exercise
 
+## Interlude - Cloud Native Development and DevOps
+This is Andrea and Jim's SWAT talk regarding the cloud.
+
 ## Step 2: Pivotal Cloud Foundry
 1. What is PCF?
 2. Basic PCF Commands
