@@ -32,7 +32,7 @@
 ### Basics of Spring
 1. Overview of the Spring Container and Dependency Injection (IoC)
 2. Overview of Spring Initializr
-3. Structore of Modern Java Web Applications (Hexagonal)
+3. Structure of Modern Java Web Applications (Hexagonal)
     - Why we build applications this way (testable)
     - Recomendations for package structure
 4. Overview of Spring REST
@@ -74,7 +74,7 @@ This is Andrea and Jim's SWAT talk regarding the cloud.
 
 ## Step 5: JPA in the Cloud
 1. Spring cloud support for PostreSQL
-2. How to use anin-memory database for testing and PostgreSQL for production
+2. How to use an in-memory database for testing and PostgreSQL for production
 3. Exercise
     - Create a free PostgreSQL service in your PCF instance
     - Change the Spring configuration to use PostgreSQL in the Cloud
