@@ -50,11 +50,12 @@
         }
         ```
     - Write some unit tests to verify that your calculator is correct. Here are some sample values to use:
+    
         | Amount | Rate | Years | Payment|
         |--------|------|-------|--------|
         | 200,000.00 | 6.5% | 30 | 1264.14 |
         | 180,000.00 | 0% | 30 | 500.00 |
-        
+
 
 With the project in this state all tests should pass and it should be runnable locally. Swagger should work.
 
