@@ -1,4 +1,4 @@
-package com.dmi.bootcamp.bank.domain;
+package com.dmi.bootcamp.bank.dmibank.domain;
 
 import java.math.BigDecimal;
 

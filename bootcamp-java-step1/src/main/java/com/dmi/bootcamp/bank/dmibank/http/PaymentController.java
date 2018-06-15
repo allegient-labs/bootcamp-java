@@ -1,4 +1,4 @@
-package com.dmi.bootcamp.bank.http;
+package com.dmi.bootcamp.bank.dmibank.http;
 
 import java.math.BigDecimal;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dmi.bootcamp.bank.domain.CalculatedPayment;
-import com.dmi.bootcamp.bank.service.HitCountService;
+import com.dmi.bootcamp.bank.dmibank.domain.CalculatedPayment;
+import com.dmi.bootcamp.bank.dmibank.service.HitCountService;
 import com.dmi.bootcamp.payment.calculator.PaymentCalculator;
 
 import io.swagger.annotations.ApiOperation;

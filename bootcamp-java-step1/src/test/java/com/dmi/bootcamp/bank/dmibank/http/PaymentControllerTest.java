@@ -1,4 +1,4 @@
-package com.dmi.bootcamp.bank.http;
+package com.dmi.bootcamp.bank.dmibank.http;
 
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;

@@ -1,4 +1,4 @@
-package com.dmi.bootcamp.bank.service;
+package com.dmi.bootcamp.bank.dmibank.service;
 
 public class HitCountServiceInMemory implements HitCountService {
 
