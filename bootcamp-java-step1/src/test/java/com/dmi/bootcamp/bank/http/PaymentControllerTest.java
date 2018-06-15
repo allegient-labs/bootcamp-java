@@ -1,4 +1,4 @@
-package com.dmi.loancalculator.http;
+package com.dmi.bootcamp.bank.http;
 
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;

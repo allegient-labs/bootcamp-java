@@ -1,4 +1,4 @@
-package com.dmi.loancalculator.service;
+package com.dmi.bootcamp.bank.service;
 
 public interface HitCountService {
 

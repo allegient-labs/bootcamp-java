@@ -1,21 +1,21 @@
-package com.dmi.loancalculator;
+package com.dmi.bootcamp.bank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.dmi.loancalculator.service.HitCountService;
-import com.dmi.loancalculator.service.HitCountServiceInMemory;
-import com.dmi.loancalculator.service.PaymentCalculator;
+import com.dmi.bootcamp.bank.service.HitCountService;
+import com.dmi.bootcamp.bank.service.HitCountServiceInMemory;
+import com.dmi.bootcamp.payment.calculator.PaymentCalculator;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class DemoApplication {
+public class DmibankApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(DmibankApplication.class, args);
     }
     
     @Bean

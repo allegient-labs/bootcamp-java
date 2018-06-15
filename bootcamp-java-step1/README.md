@@ -4,8 +4,8 @@
 
     - Go to https://start.spring.io/
     - Create a Maven project with Java and Spring Boot 2.0.2
-    - Group id: com.dmi
-    - Artifact: loancalculator
+    - Group id: com.dmi.booktcamp.bank
+    - Artifact: dmibank
     - Dependencies:
         - Web
         - JPA
@@ -50,12 +50,27 @@
         }
         ```
     - Write some unit tests to verify that your calculator is correct. Here are some sample values to use:
-    
+
         | Amount | Rate | Years | Payment|
         |--------|------|-------|--------|
         | 200,000.00 | 6.5% | 30 | 1264.14 |
         | 180,000.00 | 0% | 30 | 500.00 |
 
+4. Implement a Hit Counter
+
+    - Add a interface "HitCountService" in that package "com.dmi.loancalculator.service". The interface should have these methods:
+        ```java
+        long incrementHitCount();
+        void resetHitCount();
+        ```
+
+5. Write a REST Controller for your calculator
+
+    - Create a new package "com.dmi.loancalculator.http"
+    - Add a class "PaymentController" in that package
+    - Add the `@RestController` annotation to the class
+    - Add a private attribute to hold the PaymentCalculator and use `@Autowired` to inform the Spring container
+    - Add a method that will respond to 
 
 With the project in this state all tests should pass and it should be runnable locally. Swagger should work.
 
