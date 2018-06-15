@@ -2,9 +2,9 @@
 
 1. Go to https://start.spring.io/
 2. Create a Maven project with Java and Spring Boot 2.0.2
-3. Group id: com.dmi.bootcamp
-4. Artifact: xxx-bootcamp-java where xxx are your initials
-5. Dependencies: Web
+3. Group id: com.dmi
+4. Artifact: payment-calculator
+5. Dependencies: Web, JPA, Redis, H2, Cloud Connectors
 
 
 After generation...
