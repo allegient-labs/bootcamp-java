@@ -6,7 +6,7 @@ This section is about Spring data with an in memory database
 2. Create the repository PersonRepository
 3. Create the PersonController for the REST interface
 
-Good reference article:
+Good reference articles:
 
 https://dzone.com/articles/leverage-http-status-codes-to-build-a-rest-service
 
