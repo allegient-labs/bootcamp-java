@@ -76,12 +76,12 @@
     - Add the `@RestController` annotation to the class
     - Add a private attribute to hold the PaymentCalculator and use `@Autowired` to inform the Spring container
     - Add a private attribute to hold the HitCountService (use the interface) and use `@Autowired` to inform the Spring container
-    - Add a method that will respond to a URL like "/payment?amount=100000&rate=4&years=30"
+    - Add a method that will respond to a URL like "/payment?amount=100000&rate=4&years=30" (hint - use `@GetMapping` annotation on the method, and use `@RequestParam` annotation on the method parameters)
 
 7. Wire up the dependencies and enable Swagger
 
     - Alter the class `DmibankApplication` as follows
-    - Add the @EnableSwagger2 annotation to the class
+    - Add the 1@EnableSwagger21 annotation to the class
     - Add a method annotated with `@Bean` that will return a new instance of the `HitCountServiceInMemory`
     - Add a method annotated with `@Bean` that will return a new instance of the `PaymentCalculator`
 
