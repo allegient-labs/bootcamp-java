@@ -26,7 +26,7 @@ public class PersonController {
     @Autowired
     private PersonRepository personRepository;
     
-    @PostMapping("/insert")
+    @PostMapping
     public ResponseEntity<?> insert(@RequestBody Person person, UriComponentsBuilder ucBuilder) {
         Optional<Person> op = personRepository.findByFirstNameAndLastName(person.getFirstName(), person.getLastName());
         if (op.isPresent()) {
@@ -36,23 +36,23 @@ public class PersonController {
         person = personRepository.save(person);
         
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/person/find/{id}").buildAndExpand(person.getId()).toUri());
+        headers.setLocation(ucBuilder.path("/person/{id}").buildAndExpand(person.getId()).toUri());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
     
-    @GetMapping("/find/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Person> find(@PathVariable("id") Long id) {
         return personRepository.findById(id)
                 .map(p -> new ResponseEntity<>(p, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
     
-    @GetMapping("/findAll")
+    @GetMapping
     public Iterable<Person> findAll() {
         return personRepository.findAll();
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Person> update(@PathVariable("id") Long id, @RequestBody Person person) {
         return personRepository.findById(id)
                 .map(p -> {
@@ -64,7 +64,7 @@ public class PersonController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
     
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
         return personRepository.findById(id)
                 .map(p -> {

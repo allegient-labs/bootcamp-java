@@ -2,7 +2,7 @@ applications:
 - name: dmi-bank
   buildpack: java_buildpack
   memory: 768M
-  path: target/bootcamp-java-step3-0.0.1-SNAPSHOT.jar
+  path: target/bootcamp-java-step4-0.0.1-SNAPSHOT.jar
   random-route: true
   services:
   - redis
