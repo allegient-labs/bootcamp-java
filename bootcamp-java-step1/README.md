@@ -3,8 +3,8 @@
 1. Generate the project
 
     - Go to https://start.spring.io/
-    - Create a Maven project with Java and Spring Boot 2.0.2
-    - Group id: com.dmi.booktcamp.bank
+    - Create a Maven project with Java and Spring Boot 2.0.3
+    - Group id: com.dmi.bootcamp
     - Artifact: dmibank
     - Dependencies:
         - Web
@@ -37,47 +37,62 @@
 
     This should resolve the test failure.
 
-3. Implement a loan payment calculator
+3. Add your payment calculator library as a maven dependency  
 
-    - Create a new package "com.dmi.loancalculator.service"
-    - Add a class "PaymentCalculator" in that package
-    - Implement the payment calculation. The method signature should be `public BigDecimal calculate(double amount, double rate, int years)` (see this wiki page for the formula: https://en.wikipedia.org/wiki/Mortgage_calculator#Monthly_payment_formula)
-    - You can use something like the following to convert a Java `double` to a rounded `BigDecimal`:
-        ```java
-        private BigDecimal toMoney(double d) {
-            BigDecimal bd = new BigDecimal(d);
-            return bd.setScale(2, RoundingMode.HALF_UP);
-        }
-        ```
-    - Write some unit tests to verify that your calculator is correct. Here are some sample values to use:
-
-        | Amount | Rate | Years | Payment|
-        |--------|------|-------|--------|
-        | 200,000.00 | 6.5% | 30 | 1264.14 |
-        | 180,000.00 | 0% | 30 | 500.00 |
+    ```xml
+    <dependency>
+      <groupId>com.dmi.bootcamp</groupId>
+      <artifactId>payment-calculator</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    ```
 
 4. Implement a Hit Counter
 
-    - Add a interface "HitCountService" in that package "com.dmi.loancalculator.service". The interface should have these methods:
+    - Create a package "com.dmi.bootcamp.dmibank.service"
+    - Create an interface `HitCountService` in that package. The interface should have these methods:
         ```java
         long incrementHitCount();
         void resetHitCount();
         ```
+    - Create a class `HitCountCerviceInMemory` in that package. Implement the `HitCountService` by simply working with an internal long value
 
-5. Write a REST Controller for your calculator
+5. Create an object to hold the return value from the service call
 
-    - Create a new package "com.dmi.loancalculator.http"
+    - Create a package "com.dmi.bootcamp.dmibank.domain"
+    - Create a class `CalculatedPayment` in that package. The class should have these fields/getters/setters:
+        ```java
+        private double amount;
+        private double rate;
+        private int years;
+        private BigDecimal payment;
+        private long hitCount;
+        ```
+
+6. Write a REST Controller for your calculator
+
+    - Create a new package "com.dmi.bootcamp.dmibank.http"
     - Add a class "PaymentController" in that package
     - Add the `@RestController` annotation to the class
     - Add a private attribute to hold the PaymentCalculator and use `@Autowired` to inform the Spring container
-    - Add a method that will respond to 
+    - Add a private attribute to hold the HitCountService (use the interface) and use `@Autowired` to inform the Spring container
+    - Add a method that will respond to a URL like "/payment?amount=100000&rate=4&years=30"
 
-With the project in this state all tests should pass and it should be runnable locally. Swagger should work.
+7. Wire up the dependencies and enable Swagger
 
-Sample URLs:
+    - Alter the class `DmibankApplication` as follows
+    - Add the @EnableSwagger2 annotation to the class
+    - Add a method annotated with `@Bean` that will return a new instance of the `HitCountServiceInMemory`
+    - Add a method annotated with `@Bean` that will return a new instance of the `PaymentCalculator`
 
-http://localhost:8080/payment?amount=180000&rate=6&years=30
+8. Start the application
 
-http://localhost:8080/swagger-ui.html
+    Run the class `DmibankApplication` as a Java application in Eclipse. This will start the application and the embedded Tomcat container. The application should now respond to browser requests. The following URLs should work:      
+
+    http://localhost:8080/payment?amount=180000&rate=6&years=30
+
+    http://localhost:8080/swagger-ui.html
+
+    Play with swagger a bit to get a feel for it
 
 

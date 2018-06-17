@@ -1,4 +1,4 @@
-package com.dmi.bootcamp.bank.dmibank.http;
+package com.dmi.bootcamp.dmibank.http;
 
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -39,7 +39,7 @@ public class PaymentControllerTest {
 
     @Test
     public void testNoInterest() throws Exception {
-        mockMvc.perform(get("/resetHitCount")).andExpect(status().is(HttpStatus.OK.value()));
+        mockMvc.perform(get("/resetHitCount")).andExpect(status().is(HttpStatus.NO_CONTENT.value()));
 
         mockMvc.perform(get("/payment?amount=180000&rate=0&years=30"))
         .andExpect(status().is(HttpStatus.OK.value()))
@@ -53,7 +53,7 @@ public class PaymentControllerTest {
 
     @Test
     public void testRegularInterest() throws Exception {
-        mockMvc.perform(get("/resetHitCount")).andExpect(status().is(HttpStatus.OK.value()));
+        mockMvc.perform(get("/resetHitCount")).andExpect(status().is(HttpStatus.NO_CONTENT.value()));
 
         mockMvc.perform(get("/payment?amount=200000&rate=6.5&years=30"))
         .andExpect(status().is(HttpStatus.OK.value()))
@@ -67,7 +67,7 @@ public class PaymentControllerTest {
 
     @Test
     public void testThatCounterDoesIncrement() throws Exception {
-        mockMvc.perform(get("/resetHitCount")).andExpect(status().is(HttpStatus.OK.value()));
+        mockMvc.perform(get("/resetHitCount")).andExpect(status().is(HttpStatus.NO_CONTENT.value()));
         
         mockMvc.perform(get("/payment?amount=180000&rate=0&years=30"))
         .andExpect(status().is(HttpStatus.OK.value()))
