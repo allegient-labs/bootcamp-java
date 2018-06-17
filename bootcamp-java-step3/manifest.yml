@@ -1,7 +1,8 @@
 applications:
-- name: dmi-loan-calculator
-  memory: 640M
-  path: target/bootcamp-java-step3-1.0.0.jar
+- name: dmi-bank
+  buildpack: java_buildpack
+  memory: 768M
+  path: target/bootcamp-java-step3-0.0.1-SNAPSHOT.jar
   random-route: true
   services:
   - redis
