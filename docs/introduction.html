@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>DMI Java and Spring Bootcamp</title>
+<link rel="stylesheet" href="reveal.js-3.6.0/css/reveal.css">
+<link rel="stylesheet" href="reveal.js-3.6.0/css/theme/moon.css">
+<link rel="stylesheet" href="reveal.js-3.6.0/lib/css/obsidian.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2>DMI Java and Spring Bootcamp</h2>
+        <h3>Introduction to Spring</h3>
+        <h4>Jeff Butler</h4>
+        <p>github.com/allegient-labs/bootcamp-java</p>
+      </section>
+
+      <section>
+        <h1>A Little History</h1>
+        <ul>
+            <li>From applets to servlets</li>
+            <li>Abysmal EJBs</li>
+            <li>Framework Wars</li>
+            <li>Spring Dominates</li>
+        </ul>
+      </section>
+      
+      <section>
+            <h3>A Servlet</h3>
+            <p>No one wants to do this anymore</p>
+            <pre>
+              <code class="java" style="max-height: 450px">
+  @WebServlet("/HelloWorld")
+  public class HelloWorldServlet extends HttpServlet {
+                    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+                            
+      response.setContentType("application/html");
+      PrintWriter out = response.getWriter();
+      out.println("&lt;html&gt;");
+      out.println("&lt;body&gt;");
+      out.println("&lt;h1&gt;Hello World!&lt;/h1&gt;");
+      out.println("&lt;/body&gt;");
+      out.println("&lt;/html&gt;");
+    }
+  }
+              </code>
+            </pre>
+          </section>
+
+          <section>
+        <h1>Abstractions</h1>
+        <ul>
+            <li>Servlet API</li>
+            <li>Servlet Container</li>
+            <li>No one should write servlets anymore</li>
+            <li>Spring is an abstraction over many things</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h1>Types of Containers</h1>
+        <ul>
+            <li>Docker</li>
+            <li>Servlet Container</li>
+            <li>Spring Container</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Packaging and Deployment</h1>
+        <ul>
+            <li>The Old Way
+                <ul>
+                    <li>Monolithic Applications</li>
+                    <li>Build a WAR/EAR</li>
+                    <li>Build Infrastructure</li>
+                    <li>Deploy your EAR/WAR</li>
+                </ul>
+            </li>
+            <li>The New Way
+                <ul>
+                    <li>Microservices</li>
+                    <li>Servlet container packaged in the application</li>
+                    <li>The goal is to lessen our dependence on external infrastructure</li>
+                </ul>
+            </li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Hexagonal Architecture</h1>
+      </section>
+
+      <section>
+        <h1>Spring Basics</h1>
+        <ul>
+            <li>The heart of Spring - Inversion of Control</li>
+            <li>The Spring Container</li>
+            <li>The key annotations
+                <ul>
+                    <li>@Configuration</li>
+                    <li>@Bean</li>
+                    <li>@Autowired</li>
+                </ul>
+            </li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Spring Boot Overview</h1>
+        <ul>
+            <li>Designed for microservices architectures</li>
+            <li>Builds an application with an embedded servlet container</li>
+            <li>Easily deployed via Docker or PaaS</li>
+            <li>Great Support for Testing</li>
+            <li>A curated set of dependencies – lessens JAR Hell</li>
+            <li>Auto configuration…if a dependency is in the class path it will be used</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Starting with Spring Boot</h1>
+        <ul>
+            <li>Start at https://start.spring.io – builds a project…
+                <ul>
+                    <li>Maven or Gradle</li>
+                    <li>Java, Kotlin, or Groovy</li>
+                    <li>Pick your initial set of dependencies</li>
+                </ul>
+            </li>
+            <li>This will create a project and environment for your application – you
+                 only need to add your code, not worry too much about infrastructure or plumbing</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Spring REST</h1>
+        <ul>
+          <li>Simplifies REST Controllers</li>
+          <li>The key annotations
+            <ul>
+              <li>@RestController</li>
+              <li>@GetMapping</li>
+              <li>@RequestParam</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    
+      <section>
+        <h1>Swagger</h1>
+      </section>
+        
+      <section>
+        <h1>REST Testing</h1>
+      </section>
+     
+    </div>
+  </div>
+
+  <script src="reveal.js-3.6.0/lib/js/head.min.js"></script>
+  <script src="reveal.js-3.6.0/js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+        slideNumber: 'c/t',
+        dependencies: [
+            // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+            { src: 'reveal.js-3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <code> elements
+            { src: 'reveal.js-3.6.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+            // Zoom in and out with Alt+click
+            { src: 'reveal.js-3.6.0/plugin/zoom-js/zoom.js', async: true },
+
+            // Speaker notes
+            { src: 'reveal.js-3.6.0/plugin/notes/notes.js', async: true }
+        ]
+    });
+  </script>
+</body>
+</html>
