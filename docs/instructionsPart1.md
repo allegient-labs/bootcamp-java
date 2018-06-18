@@ -81,7 +81,7 @@
 7. Wire up the dependencies and enable Swagger
 
     - Alter the class `DmibankApplication` as follows
-    - Add the 1@EnableSwagger21 annotation to the class
+    - Add the `@EnableSwagger2` annotation to the class
     - Add a method annotated with `@Bean` that will return a new instance of the `HitCountServiceInMemory`
     - Add a method annotated with `@Bean` that will return a new instance of the `PaymentCalculator`
 
