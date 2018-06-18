@@ -4,9 +4,9 @@ This section is about Redis on Cloud Foundry. Changes:
 
 1. Allocate a free Redis cloud service on your Pivotal Web Services instance
 
-   `cf marketplace` will show different service options
-   `cf marketplace -s rediscloud` will show different service plans available for Redis Cloud
-   `cf create-service rediscloud 30mb redis` will create a free instance of redis cloud named "redis" in your space
+   - `cf marketplace` will show different service options
+   - `cf marketplace -s rediscloud` will show different service plans available for Redis Cloud
+   - `cf create-service rediscloud 30mb redis` will create a free instance of redis cloud named "redis" in your space
 
 2. Implement a Redis based hit counter
 
@@ -60,7 +60,7 @@ This section is about Redis on Cloud Foundry. Changes:
     }
     ```
 
-    Note the @Profile annotation - this configuration is only active in the cloud
+    Note the `@Profile` annotation - this configuration is only active in the cloud
 
 4. Turn off the memory based hit counter in the cloud.  Add a `@Profile("!cloud")` annotation to the bean method in `DmibankApplication`
 
