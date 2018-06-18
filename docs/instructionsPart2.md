@@ -15,14 +15,15 @@
    - Change the `CalculatedPayment` class as follows:
       - Add a `public String getPcfInstance()` method. The method should return the value from `System.getenv("CF_INSTANCE_INDEX")`
    - Add a file called `manifest.yml` to the root directory of the project. The file should contain the following
-   ```yaml
-   applications:
-   - name: dmi-bank
-     buildpack: java_buildpack
-     memory: 768M
-     path: target/dmibank-0.0.1-SNAPSHOT.jar
-     random-route: true
-   ```
+
+      ```yaml
+      applications:
+      - name: dmi-bank
+        buildpack: java_buildpack
+        memory: 768M
+        path: target/dmibank-0.0.1-SNAPSHOT.jar
+        random-route: true
+      ```
    
 5. Deploy the application
 
