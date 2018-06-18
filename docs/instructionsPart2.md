@@ -55,3 +55,9 @@
    Examine recent events with the command `cf events dmi-bank`. You should see your scale up and down activities as well as the restart.
    
    Examine the logs with `cf logs dmi-bank --recent`
+
+   Show all deployed applications with `cf apps`
+
+   Show details on a particular application with `cf app dmi-bank`
+
+   Show all the cf commands with `cf help -a`

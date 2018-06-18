@@ -1,11 +1,13 @@
 <html>
+
 <head>
-<title>DMI Java and Spring Bootcamp</title>
-<link rel="stylesheet" href="reveal.js-3.6.0/css/reveal.css">
-<link rel="stylesheet" href="reveal.js-3.6.0/css/theme/moon.css">
-<link rel="stylesheet" href="reveal.js-3.6.0/lib/css/obsidian.css">
-<link rel="stylesheet" href="css/style.css">
+  <title>DMI Java and Spring Bootcamp</title>
+  <link rel="stylesheet" href="reveal.js-3.6.0/css/reveal.css">
+  <link rel="stylesheet" href="reveal.js-3.6.0/css/theme/moon.css">
+  <link rel="stylesheet" href="reveal.js-3.6.0/lib/css/obsidian.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="reveal">
     <div class="slides">
@@ -17,20 +19,19 @@
       </section>
 
       <section>
-        <h1>A Little History</h1>
+        <h3>A Little History</h3>
         <ul>
-            <li>From applets to servlets</li>
-            <li>Abysmal EJBs</li>
-            <li>Framework Wars</li>
-            <li>Spring Dominates</li>
+          <li>From Applets to Servlets</li>
+          <li>Abysmal EJBs</li>
+          <li>Framework Wars</li>
+          <li>Spring Dominates</li>
         </ul>
       </section>
-      
+
       <section>
-            <h3>A Servlet</h3>
-            <p>No one wants to do this anymore</p>
-            <pre>
-              <code class="java" style="max-height: 450px">
+        <h3>Java Servlets</h3>
+        <pre>
+          <code class="java" style="max-height: 450px">
   @WebServlet("/HelloWorld")
   public class HelloWorldServlet extends HttpServlet {
                     
@@ -47,118 +48,192 @@
       out.println("&lt;/html&gt;");
     }
   }
-              </code>
-            </pre>
-          </section>
-
-          <section>
-        <h1>Abstractions</h1>
-        <ul>
-            <li>Servlet API</li>
-            <li>Servlet Container</li>
-            <li>No one should write servlets anymore</li>
-            <li>Spring is an abstraction over many things</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h1>Types of Containers</h1>
-        <ul>
-            <li>Docker</li>
-            <li>Servlet Container</li>
-            <li>Spring Container</li>
-        </ul>
+          </code>
+        </pre>
+        <p>No one wants to do this anymore</p>
       </section>
 
       <section>
-        <h1>Packaging and Deployment</h1>
+        <h3>Java Enterprise Edition</h3>
         <ul>
-            <li>The Old Way
-                <ul>
-                    <li>Monolithic Applications</li>
-                    <li>Build a WAR/EAR</li>
-                    <li>Build Infrastructure</li>
-                    <li>Deploy your EAR/WAR</li>
-                </ul>
-            </li>
-            <li>The New Way
-                <ul>
-                    <li>Microservices</li>
-                    <li>Servlet container packaged in the application</li>
-                    <li>The goal is to lessen our dependence on external infrastructure</li>
-                </ul>
-            </li>
-        </ul>
-      </section>
-
-      <section>
-        <h1>Hexagonal Architecture</h1>
-      </section>
-
-      <section>
-        <h1>Spring Basics</h1>
-        <ul>
-            <li>The heart of Spring - Inversion of Control</li>
-            <li>The Spring Container</li>
-            <li>The key annotations
-                <ul>
-                    <li>@Configuration</li>
-                    <li>@Bean</li>
-                    <li>@Autowired</li>
-                </ul>
-            </li>
-        </ul>
-      </section>
-
-      <section>
-        <h1>Spring Boot Overview</h1>
-        <ul>
-            <li>Designed for microservices architectures</li>
-            <li>Builds an application with an embedded servlet container</li>
-            <li>Easily deployed via Docker or PaaS</li>
-            <li>Great Support for Testing</li>
-            <li>A curated set of dependencies – lessens JAR Hell</li>
-            <li>Auto configuration…if a dependency is in the class path it will be used</li>
-        </ul>
-      </section>
-
-      <section>
-        <h1>Starting with Spring Boot</h1>
-        <ul>
-            <li>Start at https://start.spring.io – builds a project…
-                <ul>
-                    <li>Maven or Gradle</li>
-                    <li>Java, Kotlin, or Groovy</li>
-                    <li>Pick your initial set of dependencies</li>
-                </ul>
-            </li>
-            <li>This will create a project and environment for your application – you
-                 only need to add your code, not worry too much about infrastructure or plumbing</li>
-        </ul>
-      </section>
-
-      <section>
-        <h1>Spring REST</h1>
-        <ul>
-          <li>Simplifies REST Controllers</li>
-          <li>The key annotations
+          <li>a.k.a. J2EE, Java EE</li>
+          <li>Fully defined with interfaces</li>
+          <li>Many vendors offer implementations</li>
+          <li>The Java EE Specification covers a large variety of concerns:
             <ul>
-              <li>@RestController</li>
-              <li>@GetMapping</li>
-              <li>@RequestParam</li>
+              <li>Web API</li>
+              <li>Database Persistence</li>
+              <li>Distributed Transaction Management</li>
+              <li>etc.</li>
+            </ul>
+          </li>
+          <li>Transitioning from Oracle to the Eclipse Foundation as Jakarta EE</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Packaging and Deployment</h3>
+        <ul>
+          <li>The Old Way
+            <ul>
+              <li>Monolithic Applications</li>
+              <li>Build a WAR/EAR</li>
+              <li>Build Infrastructure</li>
+              <li>Deploy your EAR/WAR</li>
+            </ul>
+          </li>
+          <li>The New Way
+            <ul>
+              <li>Microservices</li>
+              <li>Servlet container packaged in the application</li>
+              <li>The goal is to lessen our dependence on external infrastructure</li>
             </ul>
           </li>
         </ul>
       </section>
-    
+
       <section>
-        <h1>Swagger</h1>
+        <h3>Clean Architecture</h3>
+        <ul>
+          <li>a.k.a. Hexagonal Architecture, Onion Architecture, Ports and Adapters</li>
+          <li>Originally described by Alistair Cockburn</li>
+          <li>Key Ideas
+            <ul>
+              <li>The core functionality of your system should be implemented with POJOs</li>
+              <li>User Interfaces and Persistence are external concerns</li>
+            </ul>
+          </li>
+        </ul>
       </section>
-        
+
       <section>
-        <h1>REST Testing</h1>
+        <h3>Hexagonal Architecture</h3>
+        <img src="images/Hexagonal-Arch.png" />
+        <p style="font-size: small">Image credit: http://pradeeploganathan.com/architecture/hexagonal-architecture/</p>
       </section>
-     
+
+      <section>
+        <h3>Spring Basics</h3>
+        <ul>
+          <li>The heart of Spring - Dependency Injection, a.k.a. Inversion of Control (IoC)
+            <ul>
+              <li>The Spring container runs inside your application's memory space</li>
+              <li>The Spring container manages the lifecycle and dependencies of your classes</li>
+            </ul>
+          </li>
+          <li>Spring provides abstractions for virtually every concern of the modern web developer</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>THe Magic Annotations</h3>
+        <ul>
+          <li>@Configuration - tells Spring to look in this class for bean providers</li>
+          <li>@Bean - tells Spring to call a method to create instances</li>
+          <li>@Autowired - tells Spring to inject</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Spring REST</h3>
+        <ul>
+          <li>Simplifies REST Controllers</li>
+          <li>The key annotations
+            <ul>
+              <li>@RestController - defines a class as a controller (will accept HTTP requests and produce JSON reponses)</li>
+              <li>@GetMapping - one of many different mappings for the different HTTP methods. Defines a route to the method.</li>
+              <li>@RequestParam - gives a name to a method parameter</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>A Typical Configuration</h3>
+        <pre>
+          <code class="java" style="max-height: 450px">
+  @Configuration
+  public class Config {
+              
+    @Bean
+    public AtomicInteger counter() {
+      return new AtomicInteger();
+    }
+  }
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>A Typical REST Controller</h3>
+        <pre>
+          <code class="java" style="max-height: 450px">
+  @RestController
+  public class HelloController {
+              
+    @Autowired
+    private AtomicInteger myCounter;
+
+    @GetMapping("/hello")
+    public ResponseEntity&lt;String&gt; hello(@RequestParam("name") String name) {
+      String answer = "Hello " + name + "! I have been called "
+        + myCounter.incrementAndGet() + " times.";
+
+      return ResponseEntity.ok(answer);
+    }
+  }
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Spring and Hexagonal Architecture</h3>
+        <ul>
+          <li>Spring is very good at injecting ports and adapters with dependency injection</li>
+          <li>Spring can do different injections based on environment settings</li>
+          <li>For example, it can set your application up one way if it is deployed to the cloud, but a different way for local
+            testing.
+          </li>
+          <li>Defining services as interfaces, then providing different implementations per environment is the key</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Spring Boot Overview</h3>
+        <ul>
+          <li>Designed for microservices architectures</li>
+          <li>Builds an application with an embedded servlet container</li>
+          <li>Easily deployed via Docker or PaaS</li>
+          <li>Great Support for Testing</li>
+          <li>A curated set of dependencies – lessens JAR Hell</li>
+          <li>Auto configuration...if a dependency is in the class path it will be used</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Starting with Spring Boot</h3>
+        <ul>
+          <li>Start at https://start.spring.io
+            <ul>
+              <li>Maven or Gradle</li>
+              <li>Java, Kotlin, or Groovy</li>
+              <li>Pick your initial set of dependencies</li>
+            </ul>
+          </li>
+          <li>This will create a project and environment for your application – you only need to add your code, not worry too
+            much about infrastructure or plumbing</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Swagger</h3>
+        <ul>
+          <li>Swagger is used to document and provide a testing interfaces for REST endpoints</li>
+          <li>Enabled with one annotation - @EnableSwagger2</li>
+          <li>Can be customized to provide detailed documentation for REST endpoints, but the defaults are pretty good</li>
+        </ul>
+      </section>
+
     </div>
   </div>
 
@@ -166,21 +241,22 @@
   <script src="reveal.js-3.6.0/js/reveal.js"></script>
   <script>
     Reveal.initialize({
-        slideNumber: 'c/t',
-        dependencies: [
-            // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-            { src: 'reveal.js-3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      slideNumber: 'c/t',
+      dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js-3.6.0/lib/js/classList.js', condition: function () { return !document.body.classList; } },
 
-            // Syntax highlight for <code> elements
-            { src: 'reveal.js-3.6.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js-3.6.0/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
 
-            // Zoom in and out with Alt+click
-            { src: 'reveal.js-3.6.0/plugin/zoom-js/zoom.js', async: true },
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js-3.6.0/plugin/zoom-js/zoom.js', async: true },
 
-            // Speaker notes
-            { src: 'reveal.js-3.6.0/plugin/notes/notes.js', async: true }
-        ]
+        // Speaker notes
+        { src: 'reveal.js-3.6.0/plugin/notes/notes.js', async: true }
+      ]
     });
   </script>
 </body>
+
 </html>
