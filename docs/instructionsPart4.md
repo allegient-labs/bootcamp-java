@@ -2,7 +2,7 @@
 
 In this step you will create a REST controller that interacts with a JPA data source for CRUD operations.
 
-## Create the JPA 
+## Create the JPA/CRUD/REST Code
 
 This section is about using Spring JPA with an in memory database.
 
