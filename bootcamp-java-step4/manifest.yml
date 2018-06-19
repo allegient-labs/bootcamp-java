@@ -6,3 +6,5 @@ applications:
   random-route: true
   services:
   - redis
+  - postgresql
+  

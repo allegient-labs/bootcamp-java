@@ -1,5 +1,7 @@
 package com.dmi.bootcamp.dmibank;
 
+import javax.sql.DataSource;
+
 import org.springframework.cloud.config.java.AbstractCloudConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +16,12 @@ import com.dmi.bootcamp.dmibank.service.HitCountServiceRedis;
 @Configuration
 @Profile("cloud")
 public class CloudConfiguration extends AbstractCloudConfig {
+    
+    @Bean
+    public DataSource datasource() {
+        return connectionFactory().dataSource();
+    }
+
     @Bean
     public RedisConnectionFactory redisFactory() {
         return connectionFactory().redisConnectionFactory();
