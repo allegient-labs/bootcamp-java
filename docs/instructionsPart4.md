@@ -22,6 +22,26 @@ This section is about using Spring JPA with an in memory database.
 
 4. Run your application locally and test it with the Swagger UI.
 
+5. If you want to use the embedded H2 console, then make the following changes:
+
+    - In `application.properties`, add the following:
+
+        ```yaml
+        spring.h2.console.enabled=true
+        spring.h2.console.path=/h2
+        ```
+
+    - Access the console at http://localhost:8080/h2/login.do
+
+    - Use the following credentials:
+
+        ```yaml
+        Driver class: org.h2.Driver
+        JDBC URL: jdbc:h2:mem:testdb
+        User name: sa
+        Password: -blank-
+        ```
+
 ## Using PostgreSQL in the Cloud
 
 1. Create a free PostgreSQL service on Cloud Foundry
